@@ -1,82 +1,207 @@
 ﻿# Eman Selim | Portfolio Website
 
-Professional multilingual portfolio website (English/German) with dark/light theme support and a dynamically generated CV page.
+A modern multilingual portfolio website built with HTML, CSS, and JavaScript.
 
-## Live Content Areas
-- Hero
-- About + Education timeline
-- Skills + Language levels
+This project was created as a personal portfolio to present my skills, projects, certificates, and academic background in a clean and responsive design with dark/light mode support and a dynamically generated CV page.
+
+---
+
+## 🌐 Live Demo
+
+[View Portfolio Website](https://eman-m-selim.github.io/portfolio-website/)
+
+---
+
+## 🖼️ Preview
+
+![Portfolio Preview](./assets/images/portfolio-preview.png)
+
+---
+
+## ✨ Features
+
+- Responsive modern UI
+- English / German language support
+- Dark & Light theme toggle
+- Dynamic portfolio data structure
+- About & Education section
+- Skills & Languages section
 - Experience timeline
-- Projects
-- Certificates
-- Contact
-- CV generator (print/PDF)
+- Projects showcase
+- Certificates page
+- Contact section
+- Dynamic CV page
+- Print / PDF CV export
+- GitHub Pages deployment ready
 
-## Tech Stack
+---
+
+## 🛠️ Tech Stack
+
 - HTML5
 - CSS3
 - Vanilla JavaScript
 - Bootstrap Icons
-- Shared data model for all pages (`data/portfolio-data.js`)
+- Git & GitHub
+- GitHub Pages
 
-## Project Structure
+---
+
+## 📂 Project Structure
+
 ```text
 .
-|- assets/
-|  |- images/
-|- css/
-|  |- style.css
-|  |- cv.css
-|- js/
-|  |- script.js
-|  |- cv.js
-|- data/
-|  |- portfolio-data.js
-|- index.html
-|- projects.html
-|- certificates.html
-|- cv.html
+├── assets/
+│   └── images/
+├── css/
+│   ├── style.css
+│   └── cv.css
+├── js/
+│   ├── script.js
+│   └── cv.js
+├── data/
+│   └── portfolio-data.js
+├── index.html
+├── projects.html
+├── certificates.html
+├── cv.html
+└── README.md
 ```
 
-## Local Development
-1. Clone the repository.
-2. Open `index.html` directly in a browser, or use a static server.
-3. Optional static server examples:
-   - `python -m http.server 8000`
-   - `npx serve .`
+---
 
-## Content Management
-All dynamic text and structured content are centralized in:
-- `data/portfolio-data.js`
+## 📄 Main Sections
 
-Update this file to change:
-- Translations (EN/DE)
-- Personal profile information
-- Projects and certificates
+### Home / Hero
+Personal introduction with social links and quick actions.
+
+### About
+Short professional summary and education timeline.
+
+### Skills
+Frontend, backend, AI, tools, methods, soft skills, and language levels.
+
+### Experience
+Professional and student work experience displayed as a timeline.
+
+### Projects
+Highlighted portfolio projects with technologies and links.
+
+### Certificates
+Dedicated page for certifications and learning progress.
+
+### Contact
+Contact form, social links, and location information.
+
+### CV
+Dynamic printable CV page with PDF export support.
+
+---
+
+## 🧠 Content Management
+
+All portfolio content is managed centrally from:
+
+```text
+data/portfolio-data.js
+```
+
+This includes:
+
+- Translations (EN / DE)
+- Personal information
+- Skills
+- Experience
+- Projects
+- Certificates
 - CV content
 
-## Accessibility and UX
-- Skip link for keyboard users
-- Focus-visible states for interactive elements
-- Responsive navigation with keyboard escape handling
-- Consistent heading hierarchy and semantic sections
-- Improved contrast handling for light/dark themes
+---
 
-## GitHub Pages Publishing
-1. Push repository to GitHub.
-2. In repository settings, open **Pages**.
-3. Set source to the main branch root (`/ (root)`).
-4. Save and wait for deployment.
+## ♿ Accessibility & UX
 
-Because all links are relative, the site is GitHub Pages compatible.
+- Semantic HTML structure
+- Responsive layout
+- Keyboard-friendly navigation
+- Focus-visible states
+- Accessible color contrast
+- Mobile-friendly navigation
+- Print-optimized CV layout
 
-## Final QA Checklist
-- Desktop/tablet/mobile layouts
-- English and German language switching
-- Dark and light theme switching
-- CV page rendering and PDF print/download
-- Internal navigation anchors
-- External links (GitHub, LinkedIn, certificate verification)
+---
 
-## License
+## 🚀 Local Development
+
+Clone the repository:
+
+```bash
+git clone https://github.com/Eman-M-Selim/portfolio-website.git
+```
+
+Open the project folder:
+
+```bash
+cd portfolio-website
+```
+
+Run a local server (optional):
+
+```bash
+python -m http.server 8000
+```
+
+or
+
+```bash
+npx serve .
+```
+
+Then open:
+
+```text
+http://localhost:8000
+```
+
+---
+
+## 🌍 Deployment
+
+This website is deployed using GitHub Pages.
+
+To deploy:
+
+1. Push the repository to GitHub
+2. Open:
+   `Settings → Pages`
+3. Select:
+   - Source → Deploy from a branch
+   - Branch → main
+   - Folder → / (root)
+4. Save
+
+---
+
+## ✅ Final QA Checklist
+
+- Desktop layout
+- Tablet layout
+- Mobile responsiveness
+- Dark mode
+- Light mode
+- Language switching
+- CV print layout
+- External links
+- GitHub Pages deployment
+
+---
+
+## 📬 Contact
+
+- GitHub: [Eman-M-Selim](https://github.com/Eman-M-Selim)
+- LinkedIn: [eman-m-selim](https://linkedin.com/in/eman-m-selim)
+
+---
+
+## 📜 License
+
 This project is a personal portfolio website created for learning and professional presentation purposes.
