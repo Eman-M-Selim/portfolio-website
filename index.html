@@ -1,0 +1,192 @@
+﻿<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Eman Selim | Full-Stack & AI Portfolio</title>
+    <meta name="description" content="Portfolio of Eman Selim, Computer Science student focused on Full-Stack Development and AI." />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" />
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <a class="skip-link" href="#main-content">Skip to main content</a>
+    <div class="background-layer" aria-hidden="true"></div>
+
+    <header class="site-header" id="top">
+      <nav class="main-navbar" aria-label="Main navigation">
+        <a class="brand-logo" href="#hero" aria-label="Go to home section">EMAN SELIM</a>
+
+        <button
+          class="mobile-menu-toggle"
+          id="mobile-menu-toggle"
+          type="button"
+          aria-expanded="false"
+          aria-controls="navbar-links"
+          aria-label="Open navigation menu"
+        >
+          <i class="bi bi-list" aria-hidden="true"></i>
+        </button>
+
+        <div class="navbar-links" id="navbar-links">
+          <a class="nav-link" href="#about">About</a>
+          <a class="nav-link" href="#skills">Skills</a>
+          <a class="nav-link" href="#experience">Experience</a>
+          <a class="nav-link" href="#projects">Projects</a>
+          <a class="nav-link" href="#certificates">Certificates</a>
+          <a class="nav-link" href="#contact">Contact</a>
+        </div>
+
+        <div class="navbar-actions">
+          <button class="icon-button" id="theme-toggle" type="button" aria-label="Toggle dark mode" aria-pressed="false">
+            <i class="bi bi-moon-stars-fill" aria-hidden="true"></i>
+          </button>
+          <button class="lang-switch" id="language-toggle" type="button" aria-label="Language switch">EN</button>
+        </div>
+      </nav>
+    </header>
+
+    <main id="main-content">
+      <!-- Hero Section: introduces profile, primary CTAs, and social links -->
+      <section id="hero" class="hero-section">
+        <div class="hero-grid reveal">
+          <article class="hero-profile-card">
+            <div class="profile-frame floating-avatar">
+              <img id="hero-image" src="assets/images/eman-profile.jpeg" alt="Portrait" decoding="async" fetchpriority="high" />
+            </div>
+          </article>
+
+          <article class="hero-content">
+            <h1 id="hero-name">Eman Selim</h1>
+            <h2 id="hero-subtitle"></h2>
+            <p id="hero-summary"></p>
+
+            <div class="hero-social-icons" aria-label="Hero contact links">
+              <a id="hero-github" target="_blank" rel="noreferrer noopener" aria-label="GitHub"><i class="bi bi-github" aria-hidden="true"></i></a>
+              <a id="hero-linkedin" target="_blank" rel="noreferrer noopener" aria-label="LinkedIn"><i class="bi bi-linkedin" aria-hidden="true"></i></a>
+              <a id="hero-email" aria-label="Email"><i class="bi bi-envelope" aria-hidden="true"></i></a>
+            </div>
+
+            <div class="hero-buttons">
+              <a class="button button-primary" href="#projects"><i class="bi bi-kanban" aria-hidden="true"></i> <span id="hero-projects-text"></span></a>
+              <a class="button button-secondary" href="./cv.html" target="_blank" rel="noreferrer noopener">
+                <i class="bi bi-download" aria-hidden="true"></i> <span id="hero-cv-text"></span>
+              </a>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <!-- About Section: personal summary and education timeline -->
+      <section id="about" class="content-section reveal">
+        <h2 class="section-title" id="about-title"></h2>
+
+        <div class="about-education-layout">
+          <article class="glass-card standard-card about-card">
+            <h3 class="content-card-title" id="about-card-title"></h3>
+            <p id="about-summary"></p>
+          </article>
+
+          <article class="glass-card standard-card education-card">
+            <h3 class="content-card-title" id="education-card-title"></h3>
+            <div class="timeline compact-timeline about-education-timeline" id="education-timeline"></div>
+          </article>
+        </div>
+      </section>
+
+      <!-- Skills Section: dynamically rendered skill groups and language levels -->
+      <section id="skills" class="content-section reveal">
+        <h2 class="section-title" id="skills-title"></h2>
+        <div class="skills-grid" id="skills-grid"></div>
+        <div class="languages-grid" id="languages-grid"></div>
+      </section>
+
+      <!-- Experience Timeline: rendered from shared localized data -->
+      <section id="experience" class="content-section reveal">
+        <h2 class="section-title" id="experience-title"></h2>
+        <div class="timeline compact-timeline experience-timeline" id="experience-timeline"></div>
+      </section>
+
+      <!-- Projects Cards: preview cards with CTA to full projects page -->
+      <section id="projects" class="content-section reveal">
+        <h2 class="section-title" id="projects-title"></h2>
+        <div class="projects-grid" id="projects-grid"></div>
+        <div class="projects-cta">
+          <a class="button button-primary" href="./projects.html" id="all-projects-button"></a>
+        </div>
+      </section>
+
+      <!-- Certificates Section: recent certificates with CTA to full list -->
+      <section id="certificates" class="content-section reveal">
+        <h2 class="section-title" id="certificates-title"></h2>
+        <div class="certificates-grid" id="certificates-grid"></div>
+        <div class="certificates-cta">
+          <a class="button button-primary" href="./certificates.html" id="all-certificates-button"></a>
+        </div>
+      </section>
+
+      <!-- Contact Section: dynamic contact info + client-side mailto form -->
+      <section id="contact" class="content-section reveal">
+        <h2 class="section-title" id="contact-title"></h2>
+
+        <div class="contact-grid">
+          <article class="glass-card contact-info" id="contact-info-list"></article>
+
+          <form class="glass-card contact-form">
+            <h3 class="content-card-title" id="contact-form-card-title"></h3>
+            <div class="form-row">
+              <div class="form-field">
+                <label for="name" id="contact-label-name"></label>
+                <input id="name" name="name" type="text" autocomplete="name" required />
+              </div>
+              <div class="form-field">
+                <label for="email" id="contact-label-email"></label>
+                <input id="email" name="email" type="email" autocomplete="email" required />
+              </div>
+            </div>
+
+            <div class="form-field">
+              <label for="subject" id="contact-label-subject"></label>
+              <input id="subject" name="subject" type="text" autocomplete="on" required />
+            </div>
+
+            <div class="form-field">
+              <label for="message" id="contact-label-message"></label>
+              <textarea id="message" name="message" required></textarea>
+            </div>
+
+            <button type="submit" class="button button-primary" id="contact-submit-button">
+              <i class="bi bi-send-fill" aria-hidden="true"></i>
+              <span id="contact-submit"></span>
+            </button>
+          </form>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <p>Eman Selim</p>
+      <p>© 2026 Eman Selim. All rights reserved.</p>
+      <div class="footer-links">
+        <a href="https://github.com/Eman-M-Selim" target="_blank" rel="noreferrer noopener" aria-label="GitHub profile">
+          <i class="bi bi-github" aria-hidden="true"></i>
+        </a>
+        <a href="https://www.linkedin.com/in/eman-m-selim/" target="_blank" rel="noreferrer noopener" aria-label="LinkedIn profile">
+          <i class="bi bi-linkedin" aria-hidden="true"></i>
+        </a>
+      </div>
+    </footer>
+
+    <button id="scroll-top-button" class="scroll-top-button" type="button" aria-label="Scroll to top">
+      <i class="bi bi-arrow-up" aria-hidden="true"></i>
+    </button>
+
+    <script src="data/portfolio-data.js"></script>
+    <script src="js/script.js"></script>
+  </body>
+</html>

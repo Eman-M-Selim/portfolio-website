@@ -1,0 +1,300 @@
+﻿/* CV document style: compact, clean, printable */
+.cv-page {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 24px 14px 30px;
+}
+
+.cv-actions {
+  display: flex;
+  gap: 10px;
+  justify-content: flex-end;
+  margin-bottom: 12px;
+}
+
+.cv-page-ui-title {
+  text-align: center;
+  font-size: 1.15rem;
+  color: #8055a2;
+  margin: 0 0 8px;
+  font-weight: 800;
+}
+
+.cv-print-hint {
+  margin: 0 0 12px;
+  font-size: 0.82rem;
+  color: #5f5379;
+}
+
+.cv-document {
+  background: #ffffff;
+  color: #1f1b2d;
+  border: 1px solid #e1d9f3;
+  border-radius: 8px;
+  padding: 22px 24px;
+  box-shadow: none;
+}
+
+body.dark-theme .cv-document {
+  background: #ffffff;
+  color: #1f1b2d;
+  border-color: #ddd3f0;
+}
+
+.cv-header {
+  margin-bottom: 14px;
+  text-align: center;
+}
+
+.cv-person-name {
+  font-size: 2rem;
+  line-height: 1.1;
+  margin-bottom: 6px;
+  letter-spacing: 0.02em;
+}
+
+.cv-name-primary {
+  color: #8055a2;
+  font-weight: 800;
+}
+
+.cv-name-accent {
+  color: #8055a2;
+  font-weight: 800;
+}
+
+.cv-subtitle {
+  font-size: 0.99rem;
+  color: #4b4363;
+  margin-bottom: 8px;
+}
+
+.cv-contact-stack {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  align-items: center;
+}
+
+.cv-contact-line {
+  margin: 0;
+  font-size: 0.95rem;
+  color: #433c59;
+  text-align: center;
+  line-height: 1.35;
+}
+
+.cv-contact-line a {
+  color: #433c59;
+  text-decoration: none;
+}
+
+.cv-contact-line a:hover {
+  color: #8055a2;
+  text-decoration: underline;
+}
+
+.cv-separator {
+  margin: 0 8px;
+  color: #6b5a86;
+}
+
+.cv-section {
+  margin-top: 10px;
+}
+
+.cv-section h2 {
+  font-size: 0.96rem;
+  font-weight: 800;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  border-bottom: 1px solid rgba(128, 85, 162, 0.45);
+  padding-bottom: 5px;
+  margin-bottom: 7px;
+  color: #8055a2;
+}
+
+.cv-text {
+  font-size: 0.94rem;
+  line-height: 1.45;
+}
+
+.cv-skill-line {
+  font-size: 0.9rem;
+  line-height: 1.4;
+  margin-bottom: 4px;
+}
+
+.cv-skill-label {
+  font-weight: 700;
+  color: #2b2440;
+}
+
+.cv-entry {
+  margin-bottom: 6px;
+}
+
+.cv-entry-head {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  align-items: flex-start;
+  gap: 12px;
+}
+
+.cv-entry-left {
+  min-width: 0;
+  padding-right: 8px;
+}
+
+.cv-entry-title {
+  font-weight: 700;
+  font-size: 0.95rem;
+  color: #2a2440;
+}
+
+.cv-entry-org {
+  color: #514a69;
+  font-size: 0.87rem;
+  margin-top: 1px;
+}
+
+.cv-entry-date {
+  color: #514a69;
+  font-size: 0.86rem;
+  font-weight: 600;
+  text-align: right;
+  white-space: nowrap;
+  justify-self: end;
+}
+
+.cv-entry-meta {
+  color: #514a69;
+  font-size: 0.86rem;
+  margin: 0 0 2px;
+}
+
+.cv-bullets {
+  margin: 2px 0 0;
+  padding-left: 18px;
+}
+
+.cv-bullets li {
+  font-size: 0.9rem;
+  line-height: 1.35;
+  margin-bottom: 2px;
+}
+
+@media (max-width: 760px) {
+  .cv-actions {
+    flex-direction: column;
+  }
+
+  .cv-document {
+    padding: 16px;
+  }
+
+  .cv-person-name {
+    font-size: 1.65rem;
+  }
+
+  .cv-contact-line {
+    font-size: 0.9rem;
+  }
+
+  .cv-separator {
+    margin: 0 5px;
+  }
+
+  .cv-entry-head {
+    grid-template-columns: 1fr;
+    gap: 2px;
+  }
+
+  .cv-entry-date {
+    text-align: left;
+    white-space: normal;
+  }
+}
+
+/* Print output: clean A4 document */
+@media print {
+  /* Browser-added URL/date/page headers are controlled by print dialog settings, not CSS. */
+  /* If they still appear, disable "Headers and footers" in the browser print options. */
+  .site-header,
+  .cv-page-ui-title,
+  .cv-actions,
+  .cv-print-hint,
+  .background-layer,
+  .site-footer {
+    display: none !important;
+  }
+
+  html,
+  body {
+    background: #fff !important;
+    color: #000 !important;
+    margin: 0;
+    padding: 0;
+    font-size: 11pt;
+    line-height: 1.35;
+  }
+
+  .cv-page {
+    max-width: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  .cv-document {
+    border: none;
+    border-radius: 0;
+    box-shadow: none;
+    background: #fff;
+    color: #000;
+    padding: 0;
+  }
+
+  .cv-entry-head {
+    grid-template-columns: minmax(0, 1fr) auto !important;
+    gap: 12px !important;
+  }
+
+  .cv-entry-date {
+    text-align: right !important;
+    white-space: nowrap !important;
+    justify-self: end !important;
+  }
+
+  .cv-document {
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+
+  .cv-subtitle,
+  .cv-contact-line,
+  .cv-contact-line a,
+  .cv-entry-meta,
+  .cv-entry-org,
+  .cv-text,
+  .cv-bullets li,
+  .cv-skill-line {
+    color: #000 !important;
+  }
+
+  .cv-section h2 {
+    color: #8055a2;
+    border-bottom: 1px solid rgba(128, 85, 162, 0.55);
+  }
+
+  .cv-name-primary,
+  .cv-name-accent,
+  .cv-page-ui-title {
+    color: #8055a2 !important;
+  }
+
+  @page {
+    size: A4;
+    margin: 12mm;
+  }
+}
+

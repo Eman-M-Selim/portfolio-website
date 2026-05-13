@@ -1,0 +1,55 @@
+﻿<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CV | Eman Selim</title>
+    <meta name="description" content="Printable professional CV generated from shared portfolio data." />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" />
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/cv.css" />
+  </head>
+  <body class="standalone-page cv-body">
+    <a class="skip-link" href="#cv-root">Skip to main content</a>
+    <div class="background-layer" aria-hidden="true"></div>
+
+    <header class="site-header cv-header-shell" id="top">
+      <nav class="main-navbar" aria-label="CV navigation">
+        <a class="brand-logo" href="./index.html">EMAN SELIM</a>
+
+        <div class="standalone-links">
+          <a class="nav-link" href="./index.html" id="cv-back-link">Back to Portfolio</a>
+        </div>
+
+        <div class="navbar-actions">
+          <button class="lang-switch" id="language-toggle" type="button" aria-label="Language switch">EN</button>
+          <button class="icon-button" id="theme-toggle" type="button" aria-label="Toggle dark mode" aria-pressed="false">
+            <i class="bi bi-moon-stars-fill" aria-hidden="true"></i>
+          </button>
+        </div>
+      </nav>
+    </header>
+
+    <main class="cv-page" id="cv-root">
+      <!-- CV Generator: actions and printable document are rendered dynamically -->
+      <div class="cv-actions" id="cv-actions">
+        <a class="button button-secondary" href="./index.html" id="cv-back-button">Back to Portfolio</a>
+        <button class="button button-primary" type="button" id="cv-download-button">Download PDF</button>
+      </div>
+    </main>
+
+    <footer class="site-footer cv-footer-shell">
+      <p>Eman Selim</p>
+      <p>© 2026 Eman Selim. All rights reserved.</p>
+    </footer>
+
+    <script src="data/portfolio-data.js"></script>
+    <script src="js/cv.js"></script>
+  </body>
+</html>
