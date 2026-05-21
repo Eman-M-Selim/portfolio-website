@@ -39,6 +39,38 @@
 body.cv-exporting .cv-document {
   border: none;
   border-radius: 0;
+  box-shadow: none;
+  width: 190mm !important;
+  max-width: 190mm !important;
+  padding: 22px 24px !important;
+}
+
+/* Keep PDF layout identical to desktop even when export starts on mobile/tablet viewport. */
+body.cv-exporting .cv-person-name {
+  font-size: 2rem !important;
+}
+
+body.cv-exporting .cv-contact-line {
+  font-size: 0.95rem !important;
+}
+
+body.cv-exporting .cv-separator {
+  margin: 0 8px !important;
+}
+
+body.cv-exporting .cv-phone-slot {
+  width: 136px !important;
+}
+
+body.cv-exporting .cv-entry-head {
+  grid-template-columns: minmax(0, 1fr) auto !important;
+  gap: 12px !important;
+}
+
+body.cv-exporting .cv-entry-date {
+  text-align: right !important;
+  white-space: nowrap !important;
+  justify-self: end !important;
 }
 
 body.dark-theme .cv-document {
