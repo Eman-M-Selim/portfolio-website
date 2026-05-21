@@ -29,34 +29,6 @@ const getUiLabels = (language) => portfolioData.ui[language] || portfolioData.ui
 
 const sanitizeLinkLabel = (url) => (url || "").replace(/^https?:\/\/(www\.)?/i, "");
 const formatMetaPipes = (text) => String(text || "").replace(/,\s*/g, " | ");
-const getCvFileName = () => `${String(portfolioData.personal?.name || "Eman-Selim").trim().replace(/\s+/g, "-")}-CV.pdf`;
-
-const downloadCvAsPdf = async () => {
-  const cvDocument = cvRoot?.querySelector(".cv-document");
-  if (!cvDocument || typeof window.html2pdf !== "function") {
-    return false;
-  }
-
-  const options = {
-    margin: [12, 10, 12, 10],
-    filename: getCvFileName(),
-    image: { type: "jpeg", quality: 0.98 },
-    html2canvas: { scale: 2, useCORS: true },
-    jsPDF: { unit: "mm", format: "a4", orientation: "portrait" },
-    pagebreak: {
-      mode: ["avoid-all", "css", "legacy"],
-      avoid: [".cv-section", ".cv-entry", ".cv-entry-head", ".cv-bullets", ".cv-bullets li", ".cv-section h2"],
-    },
-  };
-
-  document.body.classList.add("cv-exporting");
-  try {
-    await window.html2pdf().set(options).from(cvDocument).save();
-    return true;
-  } finally {
-    document.body.classList.remove("cv-exporting");
-  }
-};
 
 // Theme Toggle: reuses global theme preference used in the portfolio pages.
 const applyTheme = () => {
@@ -297,23 +269,8 @@ const renderCV = () => {
     window.print();
   });
 
-  downloadButton?.addEventListener("click", async () => {
-    const busyLabel = language === "de" ? "PDF wird erstellt..." : "Preparing PDF...";
-    const idleLabel = cvLabels.downloadPdf;
-    downloadButton.disabled = true;
-    downloadButton.textContent = busyLabel;
-
-    try {
-      const hasDownloaded = await downloadCvAsPdf();
-      if (!hasDownloaded) {
-        window.print();
-      }
-    } catch (error) {
-      window.print();
-    } finally {
-      downloadButton.disabled = false;
-      downloadButton.textContent = idleLabel;
-    }
+  downloadButton?.addEventListener("click", () => {
+    window.print();
   });
 
   const shouldAutoDownload = new URLSearchParams(window.location.search).get(CV_AUTO_DOWNLOAD_PARAM) === "1";
