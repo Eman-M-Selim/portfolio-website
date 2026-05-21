@@ -6,6 +6,7 @@ const THEME_STORAGE_KEY = "portfolio-theme";
 const LANGUAGE_STORAGE_KEY = "portfolio-language";
 const DEFAULT_THEME = "dark";
 const DEFAULT_LANGUAGE = "en";
+const CV_AUTO_DOWNLOAD_PARAM = "download";
 
 const cvRoot = document.getElementById("cv-root");
 const languageToggleButton = document.getElementById("language-toggle");
@@ -28,6 +29,34 @@ const getUiLabels = (language) => portfolioData.ui[language] || portfolioData.ui
 
 const sanitizeLinkLabel = (url) => (url || "").replace(/^https?:\/\/(www\.)?/i, "");
 const formatMetaPipes = (text) => String(text || "").replace(/,\s*/g, " | ");
+const getCvFileName = () => `${String(portfolioData.personal?.name || "Eman-Selim").trim().replace(/\s+/g, "-")}-CV.pdf`;
+
+const downloadCvAsPdf = async () => {
+  const cvDocument = cvRoot?.querySelector(".cv-document");
+  if (!cvDocument || typeof window.html2pdf !== "function") {
+    return false;
+  }
+
+  const options = {
+    margin: [12, 10, 12, 10],
+    filename: getCvFileName(),
+    image: { type: "jpeg", quality: 0.98 },
+    html2canvas: { scale: 2, useCORS: true },
+    jsPDF: { unit: "mm", format: "a4", orientation: "portrait" },
+    pagebreak: {
+      mode: ["avoid-all", "css", "legacy"],
+      avoid: [".cv-section", ".cv-entry", ".cv-entry-head", ".cv-bullets", ".cv-bullets li", ".cv-section h2"],
+    },
+  };
+
+  document.body.classList.add("cv-exporting");
+  try {
+    await window.html2pdf().set(options).from(cvDocument).save();
+    return true;
+  } finally {
+    document.body.classList.remove("cv-exporting");
+  }
+};
 
 // Theme Toggle: reuses global theme preference used in the portfolio pages.
 const applyTheme = () => {
@@ -165,6 +194,7 @@ const renderCV = () => {
   const labels = getUiLabels(language);
   const cvLabels = labels.cv;
   const { personal } = portfolioData;
+  const printButtonLabel = language === "de" ? "Druckeinstellungen" : "Print Settings";
 
   document.documentElement.lang = language === "de" ? "de" : "en";
   document.title = `CV | ${personal.name}`;
@@ -184,6 +214,7 @@ const renderCV = () => {
   const rawLocationLine = getLocalizedValue(personal.location, language);
   const locationLine = formatMetaPipes(rawLocationLine);
   const mapUrl = personal.locationMapUrl || `https://maps.google.com/?q=${encodeURIComponent(rawLocationLine)}`;
+  const phoneLabel = language === "de" ? "Telefon:" : "Phone:";
   const emailLine = `<a href="mailto:${personal.email}">${personal.email}</a>`;
   const linkedinLabel = sanitizeLinkLabel(personal.linkedin);
   const githubLabel = sanitizeLinkLabel(personal.github);
@@ -193,6 +224,7 @@ const renderCV = () => {
     <div class="cv-actions" id="cv-actions">
       <a class="button button-secondary" href="./index.html" id="cv-back-button">${cvLabels.backToPortfolio}</a>
       <button class="button button-primary" type="button" id="cv-download-button">${cvLabels.downloadPdf}</button>
+      <button class="button button-secondary" type="button" id="cv-print-button">${printButtonLabel}</button>
     </div>
     <p class="cv-print-hint">${cvLabels.printHint || ""}</p>
 
@@ -204,7 +236,13 @@ const renderCV = () => {
         </h1>
         <p class="cv-subtitle">${getLocalizedValue(personal.title, language)}</p>
         <div class="cv-contact-stack">
-          <p class="cv-contact-line"><a href="${mapUrl}" target="_blank" rel="noreferrer noopener">${locationLine}</a> <span class="cv-separator">|</span> ${emailLine}</p>
+          <p class="cv-contact-line">
+            <a href="${mapUrl}" target="_blank" rel="noreferrer noopener">${locationLine}</a>
+            <span class="cv-separator">|</span>
+            <span>${phoneLabel}</span><span class="cv-phone-slot" aria-hidden="true"></span>
+            <span class="cv-separator">|</span>
+            ${emailLine}
+          </p>
           <p class="cv-contact-line">
             <strong>LinkedIn:</strong>
             <a href="${personal.linkedin}" target="_blank" rel="noreferrer noopener">${linkedinLabel}</a>
@@ -226,13 +264,13 @@ const renderCV = () => {
       </section>
 
       <section class="cv-section">
-        <h2>${cvLabels.projects}</h2>
-        ${renderProjects(language)}
+        <h2>${cvLabels.experience}</h2>
+        ${renderTimelineEntries(portfolioData.experience, language)}
       </section>
 
       <section class="cv-section">
-        <h2>${cvLabels.experience}</h2>
-        ${renderTimelineEntries(portfolioData.experience, language)}
+        <h2>${cvLabels.projects}</h2>
+        ${renderProjects(language)}
       </section>
 
       <section class="cv-section">
@@ -252,9 +290,36 @@ const renderCV = () => {
     </article>
   `;
 
-  document.getElementById("cv-download-button")?.addEventListener("click", () => {
+  const downloadButton = document.getElementById("cv-download-button");
+  const printButton = document.getElementById("cv-print-button");
+
+  printButton?.addEventListener("click", () => {
     window.print();
   });
+
+  downloadButton?.addEventListener("click", async () => {
+    const busyLabel = language === "de" ? "PDF wird erstellt..." : "Preparing PDF...";
+    const idleLabel = cvLabels.downloadPdf;
+    downloadButton.disabled = true;
+    downloadButton.textContent = busyLabel;
+
+    try {
+      const hasDownloaded = await downloadCvAsPdf();
+      if (!hasDownloaded) {
+        window.print();
+      }
+    } catch (error) {
+      window.print();
+    } finally {
+      downloadButton.disabled = false;
+      downloadButton.textContent = idleLabel;
+    }
+  });
+
+  const shouldAutoDownload = new URLSearchParams(window.location.search).get(CV_AUTO_DOWNLOAD_PARAM) === "1";
+  if (shouldAutoDownload && downloadButton) {
+    window.requestAnimationFrame(() => downloadButton.click());
+  }
 };
 
 // Language Switching: rerenders the full CV to keep content synchronized.

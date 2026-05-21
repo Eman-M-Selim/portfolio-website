@@ -35,6 +35,12 @@
   box-shadow: none;
 }
 
+/* During HTML-to-PDF export, remove frame to avoid clipped right edge artifacts. */
+body.cv-exporting .cv-document {
+  border: none;
+  border-radius: 0;
+}
+
 body.dark-theme .cv-document {
   background: #ffffff;
   color: #1f1b2d;
@@ -99,8 +105,16 @@ body.dark-theme .cv-document {
   color: #6b5a86;
 }
 
+.cv-phone-slot {
+  display: inline-block;
+  width: 136px;
+  min-height: 1em;
+}
+
 .cv-section {
   margin-top: 10px;
+  break-inside: avoid-page;
+  page-break-inside: avoid;
 }
 
 .cv-section h2 {
@@ -112,6 +126,8 @@ body.dark-theme .cv-document {
   padding-bottom: 5px;
   margin-bottom: 7px;
   color: #8055a2;
+  break-after: avoid-page;
+  page-break-after: avoid;
 }
 
 .cv-text {
@@ -132,6 +148,8 @@ body.dark-theme .cv-document {
 
 .cv-entry {
   margin-bottom: 6px;
+  break-inside: avoid-page;
+  page-break-inside: avoid;
 }
 
 .cv-entry-head {
@@ -182,6 +200,8 @@ body.dark-theme .cv-document {
   font-size: 0.9rem;
   line-height: 1.35;
   margin-bottom: 2px;
+  break-inside: avoid-page;
+  page-break-inside: avoid;
 }
 
 @media (max-width: 760px) {
@@ -203,6 +223,10 @@ body.dark-theme .cv-document {
 
   .cv-separator {
     margin: 0 5px;
+  }
+
+  .cv-phone-slot {
+    width: 88px;
   }
 
   .cv-entry-head {

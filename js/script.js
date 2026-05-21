@@ -357,7 +357,7 @@ const renderProjects = (language, options = { full: false }) => {
   }
 
   const labels = getUiLabels(language);
-  const projectList = options.full ? portfolioData.projects : portfolioData.projects.slice(0, 2);
+  const projectList = options.full ? portfolioData.projects : portfolioData.projects.slice(0, 3);
   targetGrid.innerHTML = "";
   projectList.forEach((project) => targetGrid.appendChild(createProjectCard(project, language, labels)));
   setExternalLinkSecurity(targetGrid);

@@ -18,7 +18,6 @@ const portfolioData = {
     },
     locationMapUrl: "https://maps.google.com/?q=47119+Duisburg+Germany",
     email: "eman.m.selim@gmail.com",
-    phone: "+49 163 9688853",
     github: "https://github.com/Eman-M-Selim",
     linkedin: "https://www.linkedin.com/in/eman-m-selim/",
   },
@@ -222,7 +221,7 @@ const portfolioData = {
   languages: [
     { name: { en: "Arabic", de: "Arabisch" }, level: { en: "Native", de: "Muttersprache" }, value: 100 },
     { name: { en: "German", de: "Deutsch" }, level: { en: "C1", de: "C1" }, value: 85 },
-    { name: { en: "English", de: "Englisch" }, level: { en: "B1", de: "B1" }, value: 65 },
+    { name: { en: "English", de: "Englisch" }, level: { en: "B2", de: "B2" }, value: 75 },
   ],
 
   education: [
@@ -251,7 +250,30 @@ const portfolioData = {
 
   experience: [
     {
-      period: "2021 - 2025",
+      period: "05/2026 - Present",
+      role: {
+        en: "Praxisphase Internship (AI Chatbot)",
+        de: "Praxisphase Praktikum (KI-Chatbot)",
+      },
+      organization: {
+        en: "Institute for Internet Security (if(is)), Gelsenkirchen",
+        de: "Institute for Internet Security (if(is)), Gelsenkirchen",
+      },
+      bullets: {
+        en: [
+          "Contributing to AI chatbot development in an internship setting",
+          "Building and improving chatbot features using Python",
+          "Supporting implementation and testing of practical chatbot workflows",
+        ],
+        de: [
+          "Mitarbeit an der Entwicklung eines KI-Chatbots im Rahmen der Praxisphase",
+          "Umsetzung und Weiterentwicklung von Chatbot-Funktionen mit Python",
+          "Unterstützung bei Implementierung und Tests praxisnaher Chatbot-Workflows",
+        ],
+      },
+    },
+    {
+      period: "2021 - 2026",
       role: {
         en: "Working Student Professional Experience",
         de: "Werkstudentische Berufserfahrung",
@@ -301,6 +323,25 @@ const portfolioData = {
   ],
 
   projects: [
+    {
+      title: "Beyond the Museum",
+      organization: {
+        en: "Learning Project",
+        de: "Lernprojekt",
+      },
+      image: "https://s.wordpress.com/mshots/v1/https%3A%2F%2Feman-m-selim.github.io%2Fbeyond-the-museum-landing-page%2F?w=1200",
+      summary: {
+        en: "Cinematic Egypt tourism landing page built with HTML, CSS, Bootstrap 5, and minimal JavaScript. Includes an interactive Cairo section and EN/AR language switch with RTL support.",
+        de: "Cinematische Landingpage für Ägypten-Tourismus mit HTML, CSS, Bootstrap 5 und minimalem JavaScript. Enthält einen interaktiven Kairo-Bereich sowie EN/AR-Sprachumschaltung mit RTL-Unterstützung.",
+      },
+      technologies: ["HTML5", "CSS3", "Bootstrap 5", "JavaScript"],
+      status: {
+        en: "Learning Project",
+        de: "Lernprojekt",
+      },
+      liveDemo: "https://eman-m-selim.github.io/beyond-the-museum-landing-page/",
+      sourceCode: "https://github.com/Eman-M-Selim/beyond-the-museum-landing-page.git",
+    },
     {
       title: "Vectorizr",
       organization: {
