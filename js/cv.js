@@ -167,9 +167,11 @@ const renderCV = () => {
   const cvLabels = labels.cv;
   const { personal } = portfolioData;
   const printButtonLabel = language === "de" ? "Druckeinstellungen" : "Print Settings";
+  const fileSafeName = String(personal.name || "Eman Selim").trim().replace(/\s+/g, "-");
+  const localizedFilePrefix = language === "de" ? "Lebenslauf" : "CV";
 
   document.documentElement.lang = language === "de" ? "de" : "en";
-  document.title = `CV | ${personal.name}`;
+  document.title = `${localizedFilePrefix} ${fileSafeName}`;
 
   if (languageToggleButton) {
     languageToggleButton.textContent = language.toUpperCase();
