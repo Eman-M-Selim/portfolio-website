@@ -145,8 +145,6 @@ body.dark-theme .cv-document {
 
 .cv-section {
   margin-top: 10px;
-  break-inside: avoid-page;
-  page-break-inside: avoid;
 }
 
 .cv-section h2 {
@@ -232,8 +230,6 @@ body.dark-theme .cv-document {
   font-size: 0.9rem;
   line-height: 1.35;
   margin-bottom: 2px;
-  break-inside: avoid-page;
-  page-break-inside: avoid;
 }
 
 @media (max-width: 760px) {
