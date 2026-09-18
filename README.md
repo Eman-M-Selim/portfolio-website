@@ -79,7 +79,7 @@ Personal introduction with social links and quick actions.
 Short professional summary and education timeline.
 
 ### Skills
-Frontend, backend, AI, tools, methods, soft skills, and language levels.
+Programming, backend APIs, applied AI, tools, and language levels.
 
 ### Experience
 Professional and student work experience displayed as a timeline.

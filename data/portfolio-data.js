@@ -5,12 +5,12 @@ const portfolioData = {
     name: "Eman Selim",
     profileImage: "assets/images/eman-profile.jpeg",
     title: {
-      en: "Computer Science Student | Full-Stack Development & AI",
-      de: "Informatikstudentin | Full-Stack-Entwicklung & KI",
+      en: "Computer Science Student | Python, Backend & AI Applications",
+      de: "Informatikstudentin | Python, Backend & KI-Anwendungen",
     },
     summary: {
-      en: "Building practical web applications while continuously improving my backend, API, and AI engineering skills.",
-      de: "Ich entwickle praxisnahe Webanwendungen und vertiefe kontinuierlich meine Kenntnisse in Backend-Entwicklung, APIs und KI-Technologien.",
+      en: "Building practical Python, backend and AI-based applications while expanding my software development experience.",
+      de: "Ich entwickle praxisnahe Python-, Backend- und KI-basierte Anwendungen und erweitere dabei meine Erfahrung in der Softwareentwicklung.",
     },
     location: {
       en: "47119 Duisburg, Germany",
@@ -43,7 +43,7 @@ const portfolioData = {
         followMe: "Follow Me",
       },
       aboutSummary:
-        "Computer Science student at Westfälische Hochschule focused on full-stack development and AI-enabled applications. Hands-on experience with Python, FastAPI, JavaScript, REST APIs, and Docker through academic and personal projects. Interested in backend engineering, scalable systems, and modern software development.",
+        "Computer Science student at Westfälische Hochschule with practical experience in Python, FastAPI, REST APIs and AI-based applications. Through university projects and my internship, I have worked with chatbots, RAG, AI agents and semantic search. I am currently expanding my practical experience in backend development and applied AI.",
       contactNote:
         "Feel free to reach out for internships, student jobs, collaborations, or project opportunities.",
       allProjects: "View All Projects",
@@ -79,13 +79,12 @@ const portfolioData = {
         summary: "Summary",
         skills: "Skills",
         experience: "Experience",
-        volunteering: "Volunteering",
         education: "Education",
         projects: "Projects",
         certificates: "Certificates",
         contact: "Contact",
         backToPortfolio: "Back to Portfolio",
-        downloadPdf: "Download PDF",
+        downloadPdf: "Print / Save PDF",
         printHint:
           "To remove browser date, URL, and page numbers, disable \"Headers and footers\" in the print dialog.",
       },
@@ -110,7 +109,7 @@ const portfolioData = {
         followMe: "Folge mir",
       },
       aboutSummary:
-        "Informatikstudentin an der Westfälischen Hochschule mit praktischer Erfahrung in Full-Stack-Entwicklung, REST-APIs und KI-basierten Anwendungen. Sicher im Aufbau moderner Webanwendungen mit Python, FastAPI, JavaScript und Docker. Interesse an Software Engineering, skalierbaren Systemen und praxisorientierter Problemlösung in agilen Umgebungen.",
+        "Informatikstudentin an der Westfälischen Hochschule mit praktischer Erfahrung in Python, FastAPI, REST-APIs und KI-basierten Anwendungen. Im Rahmen von Hochschulprojekten und meiner Praxisphase habe ich mit Chatbots, RAG, KI-Agenten und semantischer Suche gearbeitet. Aktuell vertiefe ich meine praktischen Kenntnisse in der Backend-Entwicklung und angewandten KI.",
       contactNote:
         "Kontaktiere mich gerne für Praktika, Werkstudentenstellen, Zusammenarbeit oder Projektmöglichkeiten.",
       allProjects: "Alle Projekte ansehen",
@@ -146,13 +145,12 @@ const portfolioData = {
         summary: "Zusammenfassung",
         skills: "Fähigkeiten",
         experience: "Berufserfahrung",
-        volunteering: "Ehrenamt",
         education: "Bildung",
         projects: "Projekte",
         certificates: "Zertifikate",
         contact: "Kontakt",
         backToPortfolio: "Zurück zum Portfolio",
-        downloadPdf: "Als PDF herunterladen",
+        downloadPdf: "Drucken / als PDF speichern",
         printHint:
           "Um Browser-Datum, URL und Seitenzahlen zu entfernen, deaktivieren Sie im Druckdialog die Option \"Kopf- und Fußzeilen\".",
       },
@@ -162,58 +160,43 @@ const portfolioData = {
   skills: {
     groups: [
       {
-        key: "frontend",
-        iconClass: "bi-window",
-        title: { en: "Frontend", de: "Frontend" },
-        items: ["HTML5", "CSS3", "Bootstrap 5", "JavaScript"],
+        key: "programming",
+        iconClass: "bi-code-slash",
+        title: { en: "Programming", de: "Programmierung" },
+        items: {
+          en: ["Python", "Java", "JavaScript (Basic Knowledge)"],
+          de: ["Python", "Java", "JavaScript (Grundkenntnisse)"],
+        },
       },
       {
-        key: "backend",
+        key: "databases",
+        iconClass: "bi-database",
+        title: { en: "Databases", de: "Datenbanken" },
+        items: ["SQL"],
+      },
+      {
+        key: "backend-apis",
         iconClass: "bi-hdd-network",
-        title: { en: "Backend", de: "Backend" },
-        items: ["Python", "Java", "FastAPI", "REST APIs"],
+        title: { en: "Backend & APIs", de: "Backend & APIs" },
+        items: {
+          en: ["FastAPI", "REST APIs"],
+          de: ["FastAPI", "REST-APIs"],
+        },
       },
       {
-        key: "ai-data",
+        key: "ai",
         iconClass: "bi-cpu",
-        title: { en: "AI & Data", de: "KI & Daten" },
-        items: ["FAISS", "Embeddings", "Prompt Engineering", "AI Agent Development"],
+        title: { en: "AI", de: "KI" },
+        items: {
+          en: ["RAG", "AI Agents", "Chatbot Development", "Embeddings", "FAISS"],
+          de: ["RAG", "KI-Agenten", "Chatbot-Entwicklung", "Embeddings", "FAISS"],
+        },
       },
       {
-        key: "tools-platforms",
+        key: "tools",
         iconClass: "bi-tools",
-        title: { en: "Tools & Platforms", de: "Tools & Plattformen" },
-        items: ["Git", "GitHub", "Docker", "Linux", "VS Code", "Figma"],
-      },
-      {
-        key: "methods",
-        iconClass: "bi-diagram-3",
-        title: { en: "Methods", de: "Methoden" },
-        items: {
-          en: ["Agile", "Scrum"],
-          de: ["Agile", "Scrum"],
-        },
-      },
-      {
-        key: "soft",
-        iconClass: "bi-people",
-        title: { en: "Soft Skills", de: "Soft Skills" },
-        items: {
-          en: [
-            "Problem Solving",
-            "Teamwork",
-            "Analytical Thinking",
-            "Communication",
-            "Adaptability",
-          ],
-          de: [
-            "Problemlösung",
-            "Teamarbeit",
-            "Analytisches Denken",
-            "Kommunikation",
-            "Anpassungsfähigkeit",
-          ],
-        },
+        title: { en: "Tools", de: "Tools" },
+        items: ["Git", "GitHub", "Docker", "VS Code"],
       },
     ],
   },
@@ -226,17 +209,12 @@ const portfolioData = {
 
   education: [
     {
-      period: "10/2021 - Present",
+      period: { en: "10/2021 - Present", de: "10/2021 - heute" },
       degree: { en: "B.Sc. Computer Science", de: "B.Sc. Informatik" },
       institution: {
         en: "Westfälische Hochschule Gelsenkirchen",
         de: "Westfälische Hochschule Gelsenkirchen",
       },
-    },
-    {
-      period: "10/2014 - 06/2015",
-      degree: { en: "Diploma in Pedagogy", de: "Diplom in Pädagogik" },
-      institution: { en: "Kafr El-Sheikh University", de: "Kafr El-Sheikh University" },
     },
     {
       period: "10/2008 - 07/2010",
@@ -250,10 +228,10 @@ const portfolioData = {
 
   experience: [
     {
-      period: "05/2026 - Present",
+      period: { en: "05/2026 - Present", de: "05/2026 - heute" },
       role: {
-        en: "Praxisphase Internship (AI Chatbot)",
-        de: "Praxisphase Praktikum (KI-Chatbot)",
+        en: "Praxisphase / Internship - AI Chatbot",
+        de: "Praxisphase - KI-Chatbot",
       },
       organization: {
         en: "Institute for Internet Security (if(is)), Gelsenkirchen",
@@ -261,41 +239,37 @@ const portfolioData = {
       },
       bullets: {
         en: [
-          "Contributing to AI chatbot development in an internship setting",
-          "Building and improving chatbot features using Python",
-          "Supporting implementation and testing of practical chatbot workflows",
+          "Contributing to the development of an AI chatbot.",
+          "Implementing and improving chatbot functionality using Python.",
+          "Working with RAG-based approaches and practical chatbot workflows.",
+          "Supporting implementation, testing and continuous improvement.",
         ],
         de: [
-          "Mitarbeit an der Entwicklung eines KI-Chatbots im Rahmen der Praxisphase",
-          "Umsetzung und Weiterentwicklung von Chatbot-Funktionen mit Python",
-          "Unterstützung bei Implementierung und Tests praxisnaher Chatbot-Workflows",
+          "Mitarbeit an der Entwicklung eines KI-Chatbots.",
+          "Implementierung und Weiterentwicklung von Chatbot-Funktionen mit Python.",
+          "Arbeit mit RAG-basierten Ansätzen und praxisnahen Chatbot-Workflows.",
+          "Unterstützung bei Implementierung, Tests und kontinuierlicher Verbesserung.",
         ],
       },
     },
     {
       period: "2021 - 2026",
       role: {
-        en: "Working Student Professional Experience",
-        de: "Werkstudentische Berufserfahrung",
+        en: "Student Jobs & Operational Experience",
+        de: "Studentische Nebentätigkeiten",
       },
       organization: {
-        en: "Amazon, Mercedes-Benz AG, Thalia, SportFive, REWE, Zara, Primark, Arvato, ID Logistics",
-        de: "Amazon, Mercedes-Benz AG, Thalia, SportFive, REWE, Zara, Primark, Arvato, ID Logistics",
+        en: "Various roles in retail, logistics, events and customer service.",
+        de: "Verschiedene Tätigkeiten in Einzelhandel, Logistik, Events und Kundenservice.",
       },
       bullets: {
         en: [
-          "Experience in customer-oriented communication and teamwork",
-          "Support for operational processes in dynamic work environments",
-          "Structured and reliable way of working under time pressure",
-          "Experience with SAP, goods processing, and organizational processes",
-          "Flexible assignments in service, events, retail, and logistics",
+          "Developed experience in teamwork, communication and customer-oriented environments.",
+          "Worked reliably and independently in dynamic operational environments.",
         ],
         de: [
-          "Erfahrung in kundenorientierter Kommunikation und Teamarbeit",
-          "Unterstützung operativer Abläufe in dynamischen Arbeitsumgebungen",
-          "Strukturierte und zuverlässige Arbeitsweise unter Zeitdruck",
-          "Erfahrung mit SAP, Warenbearbeitung und organisatorischen Prozessen",
-          "Flexible Einsätze im Service-, Event-, Einzelhandels- und Logistikbereich",
+          "Erfahrung in Teamarbeit, Kommunikation und kundenorientierten Arbeitsumgebungen.",
+          "Zuverlässige und selbstständige Arbeit in dynamischen Arbeitsumgebungen.",
         ],
       },
     },
@@ -304,20 +278,8 @@ const portfolioData = {
       role: { en: "Designer", de: "Designerin" },
       organization: { en: "Sense Adv, Egypt", de: "Sense Adv, Ägypten" },
       bullets: {
-        en: ["Packaging design", "Product photography"],
-        de: ["Verpackungsdesign", "Produktfotografie"],
-      },
-    },
-  ],
-
-  volunteering: [
-    {
-      period: "2017 - 2018",
-      role: { en: "Volunteer Teacher", de: "Ehrenamtliche Lehrerin" },
-      organization: { en: "Terre des Hommes", de: "Terre des Hommes" },
-      bullets: {
-        en: ["Teaching computer basics for children", "Microsoft Office basics"],
-        de: ["Unterricht in Computergrundlagen für Kinder", "Grundlagen in Microsoft Office"],
+        en: ["Packaging design and product photography."],
+        de: ["Verpackungsdesign und Produktfotografie."],
       },
     },
   ],
@@ -350,15 +312,15 @@ const portfolioData = {
       },
       image: "assets/images/vectorizr-search.png",
       summary: {
-        en: "Semantic search prototype using embeddings and FAISS, developed through iterative Agile workflow and team collaboration.",
-        de: "Semantischer Suchprototyp mit Embeddings und FAISS, entwickelt in einem iterativen Agile-Workflow mit Teamarbeit.",
+        en: "Semantic search prototype using embeddings and FAISS, developed as a university team project.",
+        de: "Semantischer Suchprototyp mit Embeddings und FAISS, entwickelt als Hochschul-Teamprojekt.",
       },
-      technologies: ["Python", "FastAPI", "Docker", "FAISS", "Tauri"],
+      technologies: ["Python", "FastAPI", "Docker", "FAISS", "Embeddings", "Tauri"],
       status: {
         en: "University Project",
         de: "Hochschulprojekt",
       },
-      liveDemo: "https://github.com/Eman-M-Selim",
+      liveDemo: "",
       sourceCode: "https://github.com/Eman-M-Selim",
     },
     {
@@ -369,8 +331,8 @@ const portfolioData = {
       },
       image: "assets/images/agile-tablet.png",
       summary: {
-        en: "Interactive wireframes and UI prototypes designed in a Scrum collaboration setting with iterative feedback and UI/UX teamwork.",
-        de: "Interaktive Wireframes und UI-Prototypen in Figma, umgesetzt in Scrum-Zusammenarbeit mit iterativem Feedback und UI/UX-Teamwork.",
+        en: "Interactive wireframes and UI prototypes created in Figma for a university design project.",
+        de: "Interaktive Wireframes und UI-Prototypen, erstellt in Figma für ein Hochschul-Designprojekt.",
       },
       technologies: ["Figma", "UI/UX Design", "Wireframing"],
       status: {

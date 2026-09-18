@@ -82,9 +82,9 @@ const renderTimelineEntries = (entries, language) => {
           <div class="cv-entry-head">
             <div class="cv-entry-left">
               <div class="cv-entry-title">${role}</div>
-              ${organization ? `<div class="cv-entry-org">${formatMetaPipes(organization)}</div>` : ""}
+              ${organization ? `<div class="cv-entry-org">${organization}</div>` : ""}
             </div>
-            <div class="cv-entry-date">${entry.period}</div>
+            <div class="cv-entry-date">${getLocalizedValue(entry.period, language)}</div>
           </div>
           <ul class="cv-bullets">${bullets}</ul>
         </div>
@@ -132,7 +132,7 @@ const renderEducation = (language) => {
               <div class="cv-entry-title">${degree}</div>
               <div class="cv-entry-org">${institution}</div>
             </div>
-            <div class="cv-entry-date">${entry.period}</div>
+            <div class="cv-entry-date">${getLocalizedValue(entry.period, language)}</div>
           </div>
         </div>
       `;
@@ -255,11 +255,6 @@ const renderCV = () => {
       <section class="cv-section">
         <h2>${cvLabels.certificates || labels.sectionTitles.certificates}</h2>
         ${renderCertificates(language)}
-      </section>
-
-      <section class="cv-section">
-        <h2>${cvLabels.volunteering}</h2>
-        ${renderTimelineEntries(portfolioData.volunteering || [], language)}
       </section>
     </article>
   `;

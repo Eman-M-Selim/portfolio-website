@@ -222,7 +222,7 @@ const setupThemeToggle = () => {
 // Skills Section: grouped cards rendered from shared data source.
 const createSkillCard = (group, language) => {
   const card = document.createElement("article");
-  card.className = "glass-card skill-card interactive-card";
+  card.className = "glass-card skill-card";
 
   const title = document.createElement("h3");
   title.innerHTML = `<i class="bi ${group.iconClass}" aria-hidden="true"></i> ${getLocalizedValue(group.title, language)}`;
@@ -255,26 +255,32 @@ const renderSkills = (language) => {
 
 const renderLanguages = (language) => {
   const languagesGrid = document.getElementById("languages-grid");
-  if (!languagesGrid) {
+  const skillsGrid = document.getElementById("skills-grid");
+  const targetGrid = skillsGrid || languagesGrid;
+  if (!targetGrid) {
     return;
   }
 
-  languagesGrid.innerHTML = "";
+  if (languagesGrid) {
+    languagesGrid.innerHTML = "";
+  }
+
+  const card = document.createElement("article");
+  card.className = "glass-card skill-card language-summary-card";
+
+  const title = document.createElement("h3");
+  title.innerHTML = `<i class="bi bi-translate" aria-hidden="true"></i> ${language === "de" ? "Sprachen" : "Languages"}`;
+
+  const list = document.createElement("ul");
+  list.className = "pill-list language-list";
   portfolioData.languages.forEach((languageItem) => {
-    const card = document.createElement("article");
-    card.className = "glass-card language-card";
-
-    const head = document.createElement("div");
-    head.className = "language-head";
-    head.innerHTML = `<h3>${getLocalizedValue(languageItem.name, language)}</h3><span>${getLocalizedValue(languageItem.level, language)}</span>`;
-
-    const progress = document.createElement("div");
-    progress.className = "language-progress";
-    progress.innerHTML = `<span style="width: ${languageItem.value}%"></span>`;
-
-    card.append(head, progress);
-    languagesGrid.appendChild(card);
+    const item = document.createElement("li");
+    item.textContent = `${getLocalizedValue(languageItem.name, language)} (${getLocalizedValue(languageItem.level, language)})`;
+    list.appendChild(item);
   });
+
+  card.append(title, list);
+  targetGrid.appendChild(card);
 };
 
 // About + Experience Timeline: dynamic cards with language-aware content.
@@ -287,9 +293,9 @@ const renderEducation = (language) => {
   educationTimeline.innerHTML = "";
   portfolioData.education.forEach((entry) => {
     const card = document.createElement("article");
-    card.className = "timeline-item interactive-card";
+    card.className = "timeline-item";
     card.innerHTML = `
-      <p class="timeline-date">${entry.period}</p>
+      <p class="timeline-date">${getLocalizedValue(entry.period, language)}</p>
       <h3>${getLocalizedValue(entry.degree, language)}</h3>
       <p>${getLocalizedValue(entry.institution, language)}</p>
     `;
@@ -312,9 +318,9 @@ const renderExperience = (language) => {
       .join("");
 
     const card = document.createElement("article");
-    card.className = "glass-card timeline-item interactive-card";
+    card.className = "glass-card timeline-item";
     card.innerHTML = `
-      <p class="timeline-date">${entry.period}</p>
+      <p class="timeline-date">${getLocalizedValue(entry.period, language)}</p>
       <h3>${role}</h3>
       ${organization ? `<p>${organization}</p>` : ""}
       <ul>${bullets}</ul>
@@ -326,22 +332,25 @@ const renderExperience = (language) => {
 // Projects Cards: homepage preview and full projects page share one renderer.
 const createProjectCard = (project, language, labels) => {
   const card = document.createElement("article");
-  card.className = "project-card interactive-card";
+  card.className = "project-card";
 
   const technologies = project.technologies.map((tech) => `<li>${tech}</li>`).join("");
+  const liveDemoButton = project.liveDemo
+    ? `<a class="project-link project-link-view" href="${project.liveDemo}" target="_blank" rel="noreferrer noopener"><i class="bi bi-box-arrow-up-right" aria-hidden="true"></i><span>${labels.shared.liveDemo}</span></a>`
+    : "";
   const sourceCodeButton = project.sourceCode
     ? `<a class="project-link project-link-source" href="${project.sourceCode}" target="_blank" rel="noreferrer noopener"><i class="bi bi-github" aria-hidden="true"></i><span>${labels.shared.sourceCode}</span></a>`
     : "";
 
   card.innerHTML = `
-    <img src="${project.image}" alt="${project.title} project preview" class="project-image" loading="lazy" decoding="async" />
+    <img src="${project.image}" alt="${project.title} project preview" class="project-image" width="1200" height="675" loading="lazy" decoding="async" />
     <div class="project-content">
       <h3>${project.title}</h3>
       <p class="project-summary">${getLocalizedValue(project.summary, language)}</p>
       <ul class="tech-badges">${technologies}</ul>
       <p class="project-status"><strong>${labels.shared.status}:</strong> ${getLocalizedValue(project.status, language)}</p>
       <div class="project-links">
-        <a class="project-link project-link-view" href="${project.liveDemo}" target="_blank" rel="noreferrer noopener"><i class="bi bi-box-arrow-up-right" aria-hidden="true"></i><span>${labels.shared.liveDemo}</span></a>
+        ${liveDemoButton}
         ${sourceCodeButton}
       </div>
     </div>
@@ -366,7 +375,7 @@ const renderProjects = (language, options = { full: false }) => {
 // Certificates Section: cards are reused on homepage and standalone page.
 const createCertificateCard = (certificate, labels) => {
   const card = document.createElement("article");
-  card.className = "glass-card certificate-card interactive-card";
+  card.className = "glass-card certificate-card";
 
   const credentialLine = certificate.credentialId
     ? `<p><strong>${labels.shared.credentialId}:</strong> ${certificate.credentialId}</p>`
@@ -550,34 +559,6 @@ const renderCertificatesPage = (language) => {
   renderCertificates(language, { full: true });
 };
 
-const setupInteractiveCards = () => {
-  if (window.matchMedia("(prefers-reduced-motion: reduce)").matches || window.matchMedia("(hover: none)").matches) {
-    return;
-  }
-
-  const cards = document.querySelectorAll(".interactive-card");
-  cards.forEach((cardElement) => {
-    if (cardElement.dataset.interactiveReady === "true") {
-      return;
-    }
-
-    cardElement.addEventListener("mousemove", (event) => {
-      const cardBounds = cardElement.getBoundingClientRect();
-      const centerX = cardBounds.left + cardBounds.width / 2;
-      const centerY = cardBounds.top + cardBounds.height / 2;
-      const rotateY = (event.clientX - centerX) / 40;
-      const rotateX = (centerY - event.clientY) / 40;
-      cardElement.style.transform = `translateY(-4px) rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
-    });
-
-    cardElement.addEventListener("mouseleave", () => {
-      cardElement.style.transform = "translateY(0) rotateX(0) rotateY(0)";
-    });
-
-    cardElement.dataset.interactiveReady = "true";
-  });
-};
-
 // Language Switching: rerenders all dynamic sections from shared translations.
 const renderCurrentPage = () => {
   const language = getCurrentLanguage();
@@ -594,7 +575,6 @@ const renderCurrentPage = () => {
     languageToggleButton.textContent = language.toUpperCase();
   }
   setExternalLinkSecurity(document);
-  setupInteractiveCards();
 };
 
 const setupLanguageToggle = () => {
