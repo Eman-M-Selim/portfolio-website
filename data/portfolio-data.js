@@ -3,7 +3,7 @@
 const portfolioData = {
   personal: {
     name: "Eman Selim",
-    profileImage: "assets/images/eman-profile.jpeg",
+    profileImage: "assets/images/eman-profile.jpeg?v=20260918-1",
     title: {
       en: "Computer Science Student | Python, Backend & AI Applications",
       de: "Informatikstudentin | Python, Backend & KI-Anwendungen",
