@@ -175,6 +175,12 @@ const portfolioData = {
         items: ["SQL"],
       },
       {
+        key: "frontend-basics",
+        iconClass: "bi-window",
+        title: { en: "Frontend Basics", de: "Frontend-Grundlagen" },
+        items: ["HTML5", "CSS3", "Bootstrap"],
+      },
+      {
         key: "backend-apis",
         iconClass: "bi-hdd-network",
         title: { en: "Backend & APIs", de: "Backend & APIs" },
@@ -196,7 +202,7 @@ const portfolioData = {
         key: "tools",
         iconClass: "bi-tools",
         title: { en: "Tools", de: "Tools" },
-        items: ["Git", "GitHub", "Docker", "VS Code"],
+        items: ["Git", "GitHub", "GitLab", "Docker", "VS Code"],
       },
     ],
   },
