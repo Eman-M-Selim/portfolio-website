@@ -163,6 +163,7 @@ body.dark-theme .cv-document {
 .cv-text {
   font-size: 0.94rem;
   line-height: 1.45;
+  white-space: pre-line;
 }
 
 .cv-skill-line {

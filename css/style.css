@@ -519,6 +519,10 @@ body.dark-theme .button-secondary:hover {
   margin-top: 0;
 }
 
+#about-summary {
+  white-space: pre-line;
+}
+
 .education-card .timeline-item {
   border: 1px solid var(--border);
   border-radius: var(--radius-md);

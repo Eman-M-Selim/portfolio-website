@@ -5,12 +5,12 @@ const portfolioData = {
     name: "Eman Selim",
     profileImage: "assets/images/eman-profile.jpeg?v=20260918-1",
     title: {
-      en: "Computer Science Student | Python, Backend & AI Applications",
-      de: "Informatikstudentin | Python, Backend & KI-Anwendungen",
+      en: "Software Developer",
+      de: "Softwareentwicklerin",
     },
     summary: {
-      en: "Building practical Python, backend and AI-based applications while expanding my software development experience.",
-      de: "Ich entwickle praxisnahe Python-, Backend- und KI-basierte Anwendungen und erweitere dabei meine Erfahrung in der Softwareentwicklung.",
+      en: "Building practical software solutions with experience across web development, backend systems and AI applications.",
+      de: "Entwicklung praxisnaher Softwarelösungen mit Erfahrung in Webentwicklung, Backend-Systemen und KI-Anwendungen.",
     },
     location: {
       en: "47119 Duisburg, Germany",
@@ -43,9 +43,9 @@ const portfolioData = {
         followMe: "Follow Me",
       },
       aboutSummary:
-        "Computer Science student at Westfälische Hochschule with practical experience in Python, FastAPI, REST APIs and AI-based applications. Through university projects and my internship, I have worked with chatbots, RAG, AI agents and semantic search. I am currently expanding my practical experience in backend development and applied AI.",
+        "I am a software developer with hands-on experience in building web applications, backend systems, REST APIs, and AI-based solutions.\n\nI work with technologies including Python, Java, JavaScript, FastAPI, SQL, and Docker, and I have practical experience with AI applications such as RAG, chatbots, embeddings, and AI agents.\n\nI enjoy solving technical problems, exploring different areas of software development, and continuously improving the quality and functionality of the applications I build.",
       contactNote:
-        "Feel free to reach out for internships, student jobs, collaborations, or project opportunities.",
+        "Feel free to reach out regarding professional opportunities, collaborations, or software projects.",
       allProjects: "View All Projects",
       allCertificates: "View All Certificates",
       form: {
@@ -109,9 +109,9 @@ const portfolioData = {
         followMe: "Folge mir",
       },
       aboutSummary:
-        "Informatikstudentin an der Westfälischen Hochschule mit praktischer Erfahrung in Python, FastAPI, REST-APIs und KI-basierten Anwendungen. Im Rahmen von Hochschulprojekten und meiner Praxisphase habe ich mit Chatbots, RAG, KI-Agenten und semantischer Suche gearbeitet. Aktuell vertiefe ich meine praktischen Kenntnisse in der Backend-Entwicklung und angewandten KI.",
+        "Ich bin Softwareentwicklerin mit praktischer Erfahrung in der Entwicklung von Webanwendungen, Backend-Systemen, REST-APIs und KI-basierten Lösungen.\n\nIch arbeite mit Technologien wie Python, Java, JavaScript, FastAPI, SQL und Docker und habe praktische Erfahrung mit KI-Anwendungen wie RAG, Chatbots, Embeddings und AI Agents.\n\nIch löse gerne technische Probleme, beschäftige mich mit verschiedenen Bereichen der Softwareentwicklung und arbeite kontinuierlich daran, die Qualität und Funktionalität meiner Anwendungen zu verbessern.",
       contactNote:
-        "Kontaktiere mich gerne für Praktika, Werkstudentenstellen, Zusammenarbeit oder Projektmöglichkeiten.",
+        "Kontaktieren Sie mich gerne bezüglich beruflicher Möglichkeiten, Zusammenarbeit oder Softwareprojekten.",
       allProjects: "Alle Projekte ansehen",
       allCertificates: "Alle Zertifikate ansehen",
       form: {
@@ -164,21 +164,15 @@ const portfolioData = {
         iconClass: "bi-code-slash",
         title: { en: "Programming", de: "Programmierung" },
         items: {
-          en: ["Python", "Java", "JavaScript (Basic Knowledge)"],
-          de: ["Python", "Java", "JavaScript (Grundkenntnisse)"],
+          en: ["Python", "Java", "JavaScript"],
+          de: ["Python", "Java", "JavaScript"],
         },
-      },
-      {
-        key: "databases",
-        iconClass: "bi-database",
-        title: { en: "Databases", de: "Datenbanken" },
-        items: ["SQL"],
       },
       {
         key: "frontend-basics",
         iconClass: "bi-window",
-        title: { en: "Frontend Basics", de: "Frontend-Grundlagen" },
-        items: ["HTML5", "CSS3", "Bootstrap"],
+        title: { en: "Frontend / Web", de: "Frontend / Web" },
+        items: ["HTML5", "CSS3", "Bootstrap 5"],
       },
       {
         key: "backend-apis",
@@ -188,6 +182,12 @@ const portfolioData = {
           en: ["FastAPI", "REST APIs"],
           de: ["FastAPI", "REST-APIs"],
         },
+      },
+      {
+        key: "databases",
+        iconClass: "bi-database",
+        title: { en: "Databases", de: "Datenbanken" },
+        items: ["SQL"],
       },
       {
         key: "ai",
@@ -203,6 +203,12 @@ const portfolioData = {
         iconClass: "bi-tools",
         title: { en: "Tools", de: "Tools" },
         items: ["Git", "GitHub", "GitLab", "Docker", "VS Code"],
+      },
+      {
+        key: "methods",
+        iconClass: "bi-people",
+        title: { en: "Methods", de: "Methoden" },
+        items: ["Agile", "Scrum"],
       },
     ],
   },
@@ -236,8 +242,8 @@ const portfolioData = {
     {
       period: { en: "05/2026 - Present", de: "05/2026 - heute" },
       role: {
-        en: "Praxisphase / Internship - AI Chatbot",
-        de: "Praxisphase - KI-Chatbot",
+        en: "AI Chatbot Development - Internship",
+        de: "Praxisphase - KI-Chatbot-Entwicklung",
       },
       organization: {
         en: "Institute for Internet Security (if(is)), Gelsenkirchen",
@@ -246,7 +252,7 @@ const portfolioData = {
       bullets: {
         en: [
           "Contributing to the development of an AI chatbot.",
-          "Implementing and improving chatbot functionality using Python.",
+          "Implementing and refining chatbot functionality using Python.",
           "Working with RAG-based approaches and practical chatbot workflows.",
           "Supporting implementation, testing and continuous improvement.",
         ],
@@ -261,8 +267,8 @@ const portfolioData = {
     {
       period: "2021 - 2026",
       role: {
-        en: "Student Jobs & Operational Experience",
-        de: "Studentische Nebentätigkeiten",
+        en: "Additional Professional Experience",
+        de: "Weitere Berufserfahrung",
       },
       organization: {
         en: "Various roles in retail, logistics, events and customer service.",
@@ -299,8 +305,8 @@ const portfolioData = {
       },
       image: "https://s.wordpress.com/mshots/v1/https%3A%2F%2Feman-m-selim.github.io%2Fbeyond-the-museum-landing-page%2F?w=1200",
       summary: {
-        en: "Cinematic Egypt tourism landing page built with HTML, CSS, Bootstrap 5, and minimal JavaScript. Includes an interactive Cairo section and EN/AR language switch with RTL support.",
-        de: "Cinematische Landingpage für Ägypten-Tourismus mit HTML, CSS, Bootstrap 5 und minimalem JavaScript. Enthält einen interaktiven Kairo-Bereich sowie EN/AR-Sprachumschaltung mit RTL-Unterstützung.",
+        en: "Cinematic Egypt tourism landing page developed with HTML, CSS, Bootstrap 5, and JavaScript. Eman built the page structure, responsive styling, interactive Cairo section, and EN/AR language switch with RTL support.",
+        de: "Cinematische Landingpage für Ägypten-Tourismus, entwickelt mit HTML, CSS, Bootstrap 5 und JavaScript. Eman entwickelte Seitenstruktur, responsives Styling, den interaktiven Kairo-Bereich und die EN/AR-Sprachumschaltung mit RTL-Unterstützung.",
       },
       technologies: ["HTML5", "CSS3", "Bootstrap 5", "JavaScript"],
       status: {
@@ -318,8 +324,8 @@ const portfolioData = {
       },
       image: "assets/images/vectorizr-search.png",
       summary: {
-        en: "Semantic search prototype using embeddings and FAISS, developed as a university team project.",
-        de: "Semantischer Suchprototyp mit Embeddings und FAISS, entwickelt als Hochschul-Teamprojekt.",
+        en: "Semantic search prototype using embeddings and FAISS, developed as a university team project. Eman contributed to the application workflow and backend-related implementation with Python, FastAPI and Docker.",
+        de: "Semantischer Suchprototyp mit Embeddings und FAISS, entwickelt als Hochschul-Teamprojekt. Eman arbeitete am Anwendungsworkflow und an backendbezogenen Implementierungen mit Python, FastAPI und Docker mit.",
       },
       technologies: ["Python", "FastAPI", "Docker", "FAISS", "Embeddings", "Tauri"],
       status: {
@@ -327,7 +333,7 @@ const portfolioData = {
         de: "Hochschulprojekt",
       },
       liveDemo: "",
-      sourceCode: "https://github.com/Eman-M-Selim",
+      sourceCode: "",
     },
     {
       title: "UI/UX Design Project",
@@ -337,8 +343,8 @@ const portfolioData = {
       },
       image: "assets/images/agile-tablet.png",
       summary: {
-        en: "Interactive wireframes and UI prototypes created in Figma for a university design project.",
-        de: "Interaktive Wireframes und UI-Prototypen, erstellt in Figma für ein Hochschul-Designprojekt.",
+        en: "Interactive wireframes and UI prototypes created in Figma for a university design project. Eman worked on user flows, screen layouts, and clickable prototype interactions.",
+        de: "Interaktive Wireframes und UI-Prototypen, erstellt in Figma für ein Hochschul-Designprojekt. Eman arbeitete an User Flows, Screen-Layouts und klickbaren Prototyp-Interaktionen.",
       },
       technologies: ["Figma", "UI/UX Design", "Wireframing"],
       status: {

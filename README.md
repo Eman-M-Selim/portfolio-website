@@ -82,7 +82,7 @@ Short professional summary and education timeline.
 Programming, backend APIs, applied AI, tools, and language levels.
 
 ### Experience
-Professional and student work experience displayed as a timeline.
+Professional experience displayed as a timeline.
 
 ### Projects
 Highlighted portfolio projects with technologies and links.
